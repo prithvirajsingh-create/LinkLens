@@ -132,8 +132,9 @@ app.post("/api/analyze", async (req, res) => {
                 link.finalUrl !== link.url
         );
 
-        let seoScore = 0;
 
+
+        let seoScore = 0;
         const seoIssues = [];
 
 
@@ -226,6 +227,7 @@ app.post("/api/analyze", async (req, res) => {
                     "Add descriptive alt text to images where appropriate."
             });
         }
+
 
         if (canonical) {
             seoScore += 10;
