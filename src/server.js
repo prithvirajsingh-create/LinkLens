@@ -272,51 +272,59 @@ app.post("/api/analyze", async (req, res) => {
             seoRating = "Poor";
         }
 
-        res.json({
-            url,
+        
+const analysisData = {
+    url,
 
-            htmlInfo: {
-                title,
-                description,
-                canonical,
+    htmlInfo: {
+        title,
+        description,
+        canonical,
 
-                links: {
-                    total: allLinks.length,
-                    internal: internalLinksArray.length,
-                    external: externalLinksArray.length,
-                    broken: brokenLinks.length,
-                    redirected: redirectedLinks.length
-                },
+        links: {
+            total: allLinks.length,
+            internal: internalLinksArray.length,
+            external: externalLinksArray.length,
+            broken: brokenLinks.length,
+            redirected: redirectedLinks.length
+        },
 
-                images: {
-                    total: images,
-                    missingAlt
-                },
+        images: {
+            total: images,
+            missingAlt
+        },
 
-                scripts,
-                stylesheets,
+        scripts,
+        stylesheets,
 
-                headings: {
-                    h1,
-                    h2,
-                    h3
-                }
-            },
+        headings: {
+            h1,
+            h2,
+            h3
+        }
+    },
 
-            seo: {
-                performance: {
-                    responseTime: `${responseTime} ms`
-                },
+    seo: {
+        performance: {
+            responseTime: `${responseTime} ms`
+        },
 
-                score: seoScore,
+        score: seoScore,
+        rating: seoRating,
+        issues: seoIssues
+    },
 
-                rating: seoRating,
+    linkChecks: results
+};
 
-                issues: seoIssues
-            },
+const savedAnalysis = await Analysis.create(analysisData);
 
-            linkChecks: results
-        });
+res.status(201).json({
+    ...analysisData,
+    _id: savedAnalysis._id,
+    createdAt: savedAnalysis.createdAt
+});
+
 
     } catch (error) {
     console.error("ANALYSIS ERROR:", error);
