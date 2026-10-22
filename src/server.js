@@ -337,23 +337,36 @@ res.status(201).json({
 });
 
 
-async function startServer() {
-    try {
-        if (!process.env.MONGODB_URL) {
-            throw new Error("MONGODB_URI is missing from .env");
-        }
 
-        await mongoose.connect(process.env.MONGODB_URL);
+let dbConnectionPromise;
 
-        console.log("MongoDB connected successfully");
-
-        app.listen(PORT, "0.0.0.0", () => {
-            console.log(`LinkLens API running on port ${PORT}`);
-        });
-    } catch (error) {
-        console.error("Server startup failed:", error.message);
-        process.exit(1);
+async function connectDB() {
+    if (mongoose.connection.readyState === 1) {
+        return;
     }
+
+    if (!dbConnectionPromise) {
+        dbConnectionPromise = mongoose.connect(
+            process.env.MONGODB_URI
+        ).catch((error) => {
+            dbConnectionPromise = null;
+            throw error;
+        });
+    }
+
+    await dbConnectionPromise;
 }
 
-startServer();
+app.use(async (req, res, next) => {
+    try {
+        await connectDB();
+        next();
+    } catch (error) {
+        console.error("MongoDB connection failed:", error.message);
+        res.status(503).json({
+            error: "Database temporarily unavailable"
+        });
+    }
+});
+
+module.exports = app;
