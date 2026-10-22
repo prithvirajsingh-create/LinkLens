@@ -1,3 +1,8 @@
+require("dotenv").config();
+
+const mongoose = require("mongoose");
+const Analysis = require("./models/Analysis");
+
 const express = require("express");
 const cors = require("cors");
 const cheerio = require("cheerio");
@@ -323,6 +328,24 @@ app.post("/api/analyze", async (req, res) => {
 }
 });
 
-app.listen(PORT, "0.0.0.0", () => {
-    console.log(`LinkLens API running on port ${PORT}`);
-});
+
+async function startServer() {
+    try {
+        if (!process.env.MONGODB_URI) {
+            throw new Error("MONGODB_URI is missing from .env");
+        }
+
+        await mongoose.connect(process.env.MONGODB_URI);
+
+        console.log("MongoDB connected successfully");
+
+        app.listen(PORT, "0.0.0.0", () => {
+            console.log(`LinkLens API running on port ${PORT}`);
+        });
+    } catch (error) {
+        console.error("Server startup failed:", error.message);
+        process.exit(1);
+    }
+}
+
+startServer();
