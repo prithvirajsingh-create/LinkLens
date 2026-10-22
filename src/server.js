@@ -339,11 +339,11 @@ res.status(201).json({
 
 async function startServer() {
     try {
-        if (!process.env.MONGODB_URI) {
+        if (!process.env.MONGODB_URL) {
             throw new Error("MONGODB_URI is missing from .env");
         }
 
-        await mongoose.connect(process.env.MONGODB_URI);
+        await mongoose.connect(process.env.MONGODB_URL);
 
         console.log("MongoDB connected successfully");
 
