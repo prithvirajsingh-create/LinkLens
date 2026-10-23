@@ -348,7 +348,7 @@ async function connectDB() {
 
     if (!dbConnectionPromise) {
         dbConnectionPromise = mongoose.connect(
-            process.env.MONGODB_URI
+            process.env.MONGODB_URL
         ).catch((error) => {
             dbConnectionPromise = null;
             throw error;
