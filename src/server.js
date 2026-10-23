@@ -341,9 +341,19 @@ res.status(201).json({
 
 let dbConnectionPromise;
 
+
 async function connectDB() {
     if (mongoose.connection.readyState === 1) {
         return;
+    }
+
+    console.log(
+        "MongoDB variable found:",
+        Boolean(process.env.MONGODB_URL)
+    );
+
+    if (!process.env.MONGODB_URL) {
+        throw new Error("MONGODB_URL is missing");
     }
 
     if (!dbConnectionPromise) {
@@ -357,6 +367,7 @@ async function connectDB() {
 
     await dbConnectionPromise;
 }
+
 
 app.use(async (req, res, next) => {
     try {
