@@ -27,6 +27,7 @@ app.post("/api/analyze", async (req, res) => {
 
     try {
 
+        await connectDB();
         const startTime = Date.now();
 
         const response = await fetch(url);
