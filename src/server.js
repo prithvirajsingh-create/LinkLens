@@ -17,7 +17,7 @@ app.use(express.json());
 
 app.get("/", (req, res) => {
     res.json({
-        message: "LinkLens API is running 🚀"
+        message: "la la linkLens "
     });
 });
 
@@ -31,11 +31,9 @@ app.post("/api/analyze", async (req, res) => {
         const startTime = Date.now();
 
         const response = await fetch(url);
-
         const responseTime = Date.now() - startTime;
 
-        const html = await response.text();
-
+        const html = await response.text(); 
         const $ = cheerio.load(html);
 
         const title = $("title").text().trim();
@@ -367,8 +365,6 @@ async function connectDB() {
 
     await dbConnectionPromise;
 }
-
-
 app.use(async (req, res, next) => {
     try {
         await connectDB();
