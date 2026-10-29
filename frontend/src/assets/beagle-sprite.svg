@@ -1,0 +1,123 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="576" height="64" viewBox="0 0 576 64">
+  <title>Six-frame beagle sprite sheet: four walking frames and two idle frames</title>
+  <defs>
+    <linearGradient id="coat" x1="0" y1="0" x2="0.8" y2="1">
+      <stop offset="0" stop-color="#f4c982"/>
+      <stop offset="1" stop-color="#c98243"/>
+    </linearGradient>
+    <linearGradient id="cream" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fff0cf"/>
+      <stop offset="1" stop-color="#e9c99a"/>
+    </linearGradient>
+    <linearGradient id="ear" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#87452f"/>
+      <stop offset="1" stop-color="#4f2923"/>
+    </linearGradient>
+    <g id="dog-base" stroke="#4a2b20" stroke-width="1.4" stroke-linejoin="round" stroke-linecap="round">
+      <!-- tail -->
+      <path d="M22 29 Q13 24 15 17 Q17 14 20 19 L27 27" fill="#9c5a36"/>
+      <path d="M17 18 Q17 15 20 19" fill="none" stroke="#d89b5a" stroke-width="2"/>
+      <!-- body -->
+      <path d="M22 27 Q30 21 45 24 Q54 24 60 31 L58 43 Q43 48 25 42 Z" fill="url(#coat)"/>
+      <path d="M25 28 Q29 24 37 25 L40 39 Q32 43 25 39 Z" fill="#7d4030" stroke="none"/>
+      <path d="M40 26 Q49 25 55 31 L54 41 Q47 44 41 40 Z" fill="url(#cream)" stroke="none"/>
+      <path d="M24 40 Q40 45 57 40 L57 44 Q39 49 24 44 Z" fill="#8c4b31" stroke="none"/>
+      <!-- neck and head -->
+      <path d="M51 28 Q54 20 60 19 L69 22 L70 35 L59 40 L52 36 Z" fill="url(#cream)"/>
+      <path d="M53 21 Q56 12 66 14 Q74 16 74 25 L69 33 L59 30 Z" fill="url(#coat)"/>
+      <!-- classic beagle cap -->
+      <path d="M55 20 Q56 13 64 14 Q70 14 72 20 L66 24 L59 23 Z" fill="#71402d" stroke="none"/>
+      <!-- floppy ear -->
+      <path d="M56 17 Q49 15 49 23 Q48 31 54 33 Q59 31 59 24 Z" fill="url(#ear)"/>
+      <path d="M53 21 Q52 27 55 29" fill="none" stroke="#b5744b" stroke-width="1.2"/>
+      <!-- white blaze -->
+      <path d="M63 15 Q66 17 65 22 L63 27 L60 23 L60 17 Z" fill="#fff2d8" stroke="none"/>
+      <!-- muzzle -->
+      <path d="M65 26 Q72 24 76 29 Q77 33 72 35 L65 33 Z" fill="url(#cream)"/>
+      <ellipse cx="75" cy="29" rx="2.5" ry="2" fill="#2b211d" stroke="none"/>
+      <path d="M70 34 Q73 36 75 33" fill="none" stroke="#70412f" stroke-width="1"/>
+      <!-- eye and highlight -->
+      <ellipse cx="65" cy="22" rx="1.7" ry="2" fill="#211a17" stroke="none"/>
+      <circle cx="65.5" cy="21.4" r="0.55" fill="#fff4df" stroke="none"/>
+      <!-- collar -->
+      <path d="M54 32 Q59 35 67 32 L68 35 Q60 39 54 35 Z" fill="#c83f45" stroke="none"/>
+      <circle cx="62" cy="36" r="1.5" fill="#f4cf70" stroke="#7d4030" stroke-width="0.6"/>
+      <!-- subtle ground shadow -->
+      <ellipse cx="43" cy="57" rx="27" ry="2.2" fill="#fff" opacity="0.12" stroke="none"/>
+    </g>
+  </defs>
+
+  <!-- walk frame 1 -->
+  <g transform="translate(0 0)">
+    <use href="#dog-base"/>
+    <g stroke="#4a2b20" stroke-width="1.4" stroke-linejoin="round">
+      <path d="M27 41 L33 42 L32 52 L28 55 L24 53 Z" fill="url(#cream)"/>
+      <path d="M28 53 L33 52 L34 56 L24 56 Q23 54 28 53 Z" fill="#75432f"/>
+      <path d="M42 43 L48 42 L49 49 L46 53 L42 51 Z" fill="url(#cream)"/>
+      <path d="M43 50 L49 49 L51 53 L42 54 Z" fill="#75432f"/>
+      <path d="M52 41 L57 40 L59 51 L55 54 L51 51 Z" fill="url(#cream)"/>
+      <path d="M52 51 L59 50 L60 54 L51 55 Z" fill="#75432f"/>
+    </g>
+  </g>
+  <!-- walk frame 2 -->
+  <g transform="translate(96 0)">
+    <use href="#dog-base"/>
+    <g stroke="#4a2b20" stroke-width="1.4" stroke-linejoin="round">
+      <path d="M27 41 L33 42 L34 50 L38 54 L34 56 L28 52 Z" fill="url(#cream)"/>
+      <path d="M34 53 L39 53 L40 56 L33 56 Z" fill="#75432f"/>
+      <path d="M42 43 L48 42 L46 51 L42 55 L39 52 Z" fill="url(#cream)"/>
+      <path d="M39 51 L46 51 L47 55 L39 55 Z" fill="#75432f"/>
+      <path d="M52 41 L57 40 L55 49 L51 52 L49 49 Z" fill="url(#cream)"/>
+      <path d="M49 49 L56 49 L57 53 L49 53 Z" fill="#75432f"/>
+    </g>
+  </g>
+  <!-- walk frame 3 -->
+  <g transform="translate(192 0)">
+    <use href="#dog-base"/>
+    <g stroke="#4a2b20" stroke-width="1.4" stroke-linejoin="round">
+      <path d="M27 41 L33 42 L31 49 L27 53 L23 51 Z" fill="url(#cream)"/>
+      <path d="M23 50 L30 49 L31 53 L22 54 Z" fill="#75432f"/>
+      <path d="M42 43 L48 42 L51 51 L48 54 L43 51 Z" fill="url(#cream)"/>
+      <path d="M44 51 L51 50 L53 54 L43 54 Z" fill="#75432f"/>
+      <path d="M52 41 L57 40 L60 51 L57 54 L53 51 Z" fill="url(#cream)"/>
+      <path d="M54 51 L60 50 L61 54 L53 55 Z" fill="#75432f"/>
+    </g>
+  </g>
+  <!-- walk frame 4 -->
+  <g transform="translate(288 0)">
+    <use href="#dog-base"/>
+    <g stroke="#4a2b20" stroke-width="1.4" stroke-linejoin="round">
+      <path d="M27 41 L33 42 L36 51 L33 54 L28 51 Z" fill="url(#cream)"/>
+      <path d="M29 51 L36 51 L37 55 L28 55 Z" fill="#75432f"/>
+      <path d="M42 43 L48 42 L45 50 L41 53 L39 50 Z" fill="url(#cream)"/>
+      <path d="M39 49 L46 49 L47 53 L39 54 Z" fill="#75432f"/>
+      <path d="M52 41 L57 40 L56 51 L52 54 L49 51 Z" fill="url(#cream)"/>
+      <path d="M49 50 L57 50 L58 54 L49 54 Z" fill="#75432f"/>
+    </g>
+  </g>
+  <!-- idle frame 1 -->
+  <g transform="translate(384 0)">
+    <use href="#dog-base"/>
+    <g stroke="#4a2b20" stroke-width="1.4" stroke-linejoin="round">
+      <path d="M27 41 L34 41 L34 53 L31 56 L26 54 Z" fill="url(#cream)"/>
+      <path d="M26 53 L34 53 L35 56 L25 56 Z" fill="#75432f"/>
+      <path d="M43 42 L49 42 L49 53 L46 56 L42 54 Z" fill="url(#cream)"/>
+      <path d="M42 53 L50 53 L51 56 L41 56 Z" fill="#75432f"/>
+      <path d="M53 41 L58 40 L58 52 L55 55 L51 53 Z" fill="url(#cream)"/>
+      <path d="M51 52 L59 52 L60 55 L50 55 Z" fill="#75432f"/>
+    </g>
+  </g>
+  <!-- idle frame 2: subtle head tilt and blink -->
+  <g transform="translate(480 0)">
+    <use href="#dog-base"/>
+    <path d="M63 22 Q65 24 67 22" fill="none" stroke="#211a17" stroke-width="1.4" stroke-linecap="round"/>
+    <g stroke="#4a2b20" stroke-width="1.4" stroke-linejoin="round">
+      <path d="M27 41 L34 41 L34 53 L31 56 L26 54 Z" fill="url(#cream)"/>
+      <path d="M26 53 L34 53 L35 56 L25 56 Z" fill="#75432f"/>
+      <path d="M43 42 L49 42 L49 53 L46 56 L42 54 Z" fill="url(#cream)"/>
+      <path d="M42 53 L50 53 L51 56 L41 56 Z" fill="#75432f"/>
+      <path d="M53 41 L58 40 L58 52 L55 55 L51 53 Z" fill="url(#cream)"/>
+      <path d="M51 52 L59 52 L60 55 L50 55 Z" fill="#75432f"/>
+    </g>
+  </g>
+</svg>

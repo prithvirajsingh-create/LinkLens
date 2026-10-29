@@ -99,22 +99,6 @@ button {
     }
 }
 
-/* Cursor glow */
-
-.cursor-glow {
-    position: fixed;
-    width: 300px;
-    height: 300px;
-    border-radius: 50%;
-    background: rgba(255, 86, 80, 0.939);
-    filter: blur(80px);
-    pointer-events: none;
-    z-index: 0;
-    transform: translate(-50%, -50%);
-}
-
-
-
 /* Hero section */
 
 .hero {
@@ -640,5 +624,49 @@ h1 span {
 
     .result-tabs button {
         flex: 1;
+    }
+}
+
+/* Small pixel beagle cursor companion */
+.cursor-beagle {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 36px;
+    height: 24px;
+    pointer-events: none;
+    z-index: 20;
+    transform: translate(-50%, -15%);
+    transform-origin: center;
+    will-change: left, top;
+}
+
+.beagle-sprite {
+    width: 36px;
+    height: 24px;
+    background-image: url('./assets/beagle-sprite.svg');
+    background-repeat: no-repeat;
+    background-size: 216px 24px;
+    image-rendering: pixelated;
+    animation: beagle-idle 1.1s steps(2, end) infinite;
+}
+
+.cursor-beagle.is-moving .beagle-sprite {
+    animation: beagle-walk 0.52s steps(4, end) infinite;
+}
+
+@keyframes beagle-walk {
+    from { background-position: 0 0; }
+    to { background-position: -144px 0; }
+}
+
+@keyframes beagle-idle {
+    from { background-position: -144px 0; }
+    to { background-position: -216px 0; }
+}
+
+@media (pointer: coarse), (prefers-reduced-motion: reduce) {
+    .cursor-beagle {
+        display: none;
     }
 }
