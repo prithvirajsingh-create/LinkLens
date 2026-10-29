@@ -106,7 +106,7 @@ button {
     width: 300px;
     height: 300px;
     border-radius: 50%;
-    background: rgba(120, 80, 255, 0.12);
+    background: rgba(255, 86, 80, 0.939);
     filter: blur(80px);
     pointer-events: none;
     z-index: 0;
@@ -552,8 +552,9 @@ h1 span {
 }
 
 .analysis-option:hover {
+    flex-flow: column;
     background: rgba(255, 255, 255, 0.06);
-    border-color: #555;
+    border-color: #605435;
 }
 
 .option-number {
