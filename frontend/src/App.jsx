@@ -173,6 +173,7 @@ function App() {
     );
 }
 
+
 function Results({ data, view, setView, onBack }) {
     return (
         <section className="results-page">
